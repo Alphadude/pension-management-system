@@ -1,0 +1,87 @@
+{
+  "name": "pension-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "check": "next lint && tsc --noEmit",
+    "dev": "next dev",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "preview": "next build && next start",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,mdx}": [
+      "prettier --write"
+    ],
+    "**/*.{html,json,css,scss,md,mdx}": [
+      "prettier -w"
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@mantine/charts": "^8.2.7",
+    "@mantine/core": "^8.2.3",
+    "@mantine/dates": "^8.2.7",
+    "@mantine/dropzone": "^8.2.2",
+    "@mantine/form": "^8.0.0",
+    "@mantine/hooks": "^8.2.3",
+    "@t3-oss/env-nextjs": "^0.12.0",
+    "@tanstack/react-query": "^5.74.4",
+    "@types/html-pdf": "^3.0.3",
+    "@types/numeral": "^2.0.5",
+    "axios": "^1.9.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "html2pdf.js": "^0.10.3",
+    "lint-staged": "^15.5.1",
+    "lucide-react": "^0.509.0",
+    "next": "15.2.6",
+    "next-auth": "5.0.0-beta.25",
+    "numeral": "^2.0.6",
+    "nuqs": "^2.4.3",
+    "papaparse": "^5.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-query-kit": "^3.3.1",
+    "react-to-print": "^3.1.1",
+    "recharts": "^3.1.2",
+    "sonner": "^2.0.3",
+    "tailwind-merge": "^3.2.0",
+    "tailwind-preset-mantine": "^2.1.0",
+    "uuid": "^11.1.0",
+    "yup": "^1.6.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^20.14.10",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.23.0",
+    "eslint-config-next": "^15.2.3",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.6",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.27.0"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.39.3"
+  },
+  "packageManager": "pnpm@10.7.0"
+}

@@ -1,0 +1,63 @@
+/* @import "tailwindcss"; */
+@import "tailwind-preset-mantine";
+
+@theme {
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-readex-pro: var(--font-readex-pro);
+
+  --color-primary: #2e5aac;
+  --color-secondary: #166534;
+  --color-grey: #6b7280;
+  --color-grey2: #d1d5db;
+  --color-dark: #1e1e1e;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+}
+
+@layer components {
+  .error {
+    @apply border border-red-500;
+  }
+
+  .mantine-Button-root {
+    @apply bg-primary font-poppins h-12 rounded-[12px] text-sm leading-[17px];
+
+    &[data-variant="transparent"] {
+      @apply !bg-transparent;
+    }
+    &[data-variant="outline"] {
+      @apply !text-primary !border-primary !bg-transparent;
+    }
+  }
+
+  .mantine-TextInput-input {
+    @apply focus:border-primary h-[42px] rounded-[8px] border border-[#D1D5DB];
+  }
+  .mantine-TextInput-label {
+    @apply font-poppins;
+  }
+
+  .mantine-PinInput-input {
+    @apply focus:border-primary;
+  }
+
+  .mantine-Stepper-stepLabel {
+    @apply text-grey2;
+  }
+
+  .mantine-Stepper-stepIcon {
+    @apply bg-grey2 text-white;
+  }
+  .mantine-Stepper-stepIcon[data-progress],
+  .mantine-Stepper-stepIcon[data-completed] {
+    @apply bg-primary text-white;
+  }
+}
