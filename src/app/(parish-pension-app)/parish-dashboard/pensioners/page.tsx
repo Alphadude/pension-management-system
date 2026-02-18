@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import PensionersClientPage from "./components/pensioners-client-page";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Pensioners",
 };

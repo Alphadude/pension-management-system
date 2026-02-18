@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import MonthlyRemittanceClientPage from "./components/monthly-remittance-client-page";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Monthly Remittance",
 };

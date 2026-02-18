@@ -1,5 +1,7 @@
 import ParishManagementClient from "./components/parish-management";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Parish Management",
 };
