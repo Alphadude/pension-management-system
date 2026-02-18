@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <Provider>
           <Toaster position="top-center" />
           <NuqsAdapter>{children}</NuqsAdapter>
