@@ -1,5 +1,5 @@
 [build]
-  command = "SKIP_ENV_VALIDATION=1 pnpm run build"
+  command = "SKIP_ENV_VALIDATION=1 npm run build"
   publish = ".next"
 
 [build.environment]
