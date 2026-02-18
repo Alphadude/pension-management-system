@@ -3,10 +3,8 @@
   publish = ".next"
 
 [build.environment]
-  AUTH_SECRET = "dummy_secret_for_build"
-  NEXT_PUBLIC_API_URL = "https://example.com/api"
+  NEXT_PUBLIC_API_URL = "https://pension-backend.vercel.app/api/v1"
   NEXT_PUBLIC_PAYSTACK_BASE_URL = "https://api.paystack.co"
-  NEXT_PUBLIC_PAYSTACK_SECRET_KEY = "sk_test_dummy"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
