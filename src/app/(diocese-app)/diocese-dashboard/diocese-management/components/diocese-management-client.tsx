@@ -1,14 +1,6 @@
 "use client";
-import {
-  Box,
-  Group,
-  Select,
-  Stack,
-  Tabs,
-  Text,
-  TextInput,
-} from "@mantine/core";
-import { Search } from "lucide-react";
+import UserFilters from "@/components/ui/user-filters";
+import { Box, Group, Select, Stack, Tabs, Text } from "@mantine/core";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   DioceseUserManagementStatusTab,
@@ -91,31 +83,22 @@ const DioceseManagementClient = () => {
               ))}
             </Tabs.List>
           </Group>
-          <Group
-            gap={16}
-            px={24}
-            className="mt-2 mb-5 grid w-full grid-cols-[4fr_1fr_1fr]"
-          >
-            <TextInput
-              leftSection={<Search color="#9CA3AF" size={20} />}
-              placeholder="Search by user names, emails..."
-              classNames={{
-                input: "h-[32px] md:h-[42px] w-full",
-              }}
-            />
+          <UserFilters>
             <Select
               placeholder="Status"
+              label="Status"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
             <Select
               placeholder="Parish"
+              label="Parish"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
-          </Group>
+          </UserFilters>
           <TransitionTab
             isMounted={activeTab === DioceseUserManagementStatusTab.CONTRIBUTOR}
             value={DioceseUserManagementStatusTab.CONTRIBUTOR}

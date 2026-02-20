@@ -1,16 +1,8 @@
 "use client";
-import {
-  Box,
-  Button,
-  Group,
-  Select,
-  Stack,
-  Tabs,
-  Text,
-  TextInput,
-} from "@mantine/core";
+import UserFilters from "@/components/ui/user-filters";
+import { Box, Button, Group, Select, Stack, Tabs, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Search, UserPlus } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AdminOnboardingModal from "./admin-onboarding-modal";
 import {
@@ -99,43 +91,36 @@ const UserManagementClientPage = () => {
               ))}
             </Tabs.List>
           </Group>
-          <Group
-            gap={16}
-            px={24}
-            className="mt-2 mb-5 grid w-full grid-cols-[3fr_1fr_1fr_1fr_1fr]"
-          >
-            <TextInput
-              leftSection={<Search color="#9CA3AF" size={20} />}
-              placeholder="Search by user names, emails..."
-              classNames={{
-                input: "h-[32px] md:h-[42px] w-full",
-              }}
-            />
+          <UserFilters>
             <Select
               placeholder="Status"
+              label="Status"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
             <Select
               placeholder="Role"
+              label="Role"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
             <Select
               placeholder="Parish"
+              label="Parish"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
             <Select
               placeholder="Diocese"
+              label="Diocese"
               classNames={{
                 input: "h-[42px] rounded-[8px]",
               }}
             />
-          </Group>
+          </UserFilters>
           <TransitionTab
             isMounted={activeTab === UserManagementStatusTab.CONTRIBUTOR}
             value={UserManagementStatusTab.CONTRIBUTOR}

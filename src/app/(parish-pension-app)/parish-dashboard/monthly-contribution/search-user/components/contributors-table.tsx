@@ -2,6 +2,7 @@ import EmptyTable from "@/app/(vendor-app)/vendor-dashboard/components/empty-tab
 import { ThreeDots } from "@/components/icons/three-dots";
 import { PaginationCard } from "@/components/ui/pagination";
 import TableWrapper from "@/components/ui/table-wrapper";
+import UserFilters from "@/components/ui/user-filters";
 import { useGetAllUsers } from "@/hooks/query/use-user";
 import { routes } from "@/lib/routes";
 import type { GetAllUserResponse } from "@/types/common";
@@ -14,11 +15,10 @@ import {
   Stack,
   Table,
   Text,
-  TextInput,
 } from "@mantine/core";
 import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
 import { format } from "date-fns";
-import { ArrowLeft, Eye, Search } from "lucide-react";
+import { ArrowLeft, Eye } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { parseAsInteger, useQueryState } from "nuqs";
@@ -199,56 +199,7 @@ const ContributorsTable = () => {
               Search by Name, ID, or Email
             </Text>
           </Stack>
-          <Group
-            gap={16}
-            className="mt-2 mb-5 grid w-full grid-cols-2 lg:grid-cols-4"
-          >
-            <TextInput
-              leftSection={<Search color="#9CA3AF" size={20} />}
-              placeholder="Rev. John Smith"
-              classNames={{
-                input: "h-[32px] md:h-[42px] w-full",
-              }}
-              value={search ?? ""}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <TextInput
-              placeholder="Contributor ID"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={contributorId ?? ""}
-              onChange={(e) => setContributorId(e.target.value)}
-            />
-            <TextInput
-              placeholder="Gender"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={gender ?? ""}
-              onChange={(e) => setGender(e.target.value)}
-            />
-            <TextInput
-              placeholder="Year of Birth"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={yearOfBirth ?? ""}
-              onChange={(e) => setYearOfBirth(e.target.value)}
-            />
-            <TextInput
-              placeholder="Year Started"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={yearStarted ?? ""}
-              onChange={(e) => setYearStarted(e.target.value)}
-            />
-            <TextInput
-              placeholder="Basic Salary"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={basicSalary ?? ""}
-              onChange={(e) => setBasicSalary(e.target.value)}
-            />
-            <TextInput
-              placeholder="Total Contribution"
-              classNames={{ input: "h-[32px] md:h-[42px] w-full" }}
-              value={totalContribution ?? ""}
-              onChange={(e) => setTotalContribution(e.target.value)}
-            />
-          </Group>
+          <UserFilters />
         </Stack>
         <TableWrapper
           isLoading={isLoading}

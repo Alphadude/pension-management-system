@@ -147,8 +147,21 @@ const ContributorsTable = () => {
 
   const [page, setPage] = useQueryState("page", parseAsInteger);
   const [year, _setYear] = useQueryState("year");
-
   const [month, _setMonth] = useQueryState("month");
+
+  const [contributorId] = useQueryState("contributorId");
+  const [debouncedContributorId] = useDebouncedValue(
+    contributorId?.trim(),
+    200,
+  );
+  const [gender] = useQueryState("gender");
+  const [yearOfBirth] = useQueryState("yearOfBirth", parseAsInteger);
+  const [yearStarted] = useQueryState("yearStarted", parseAsInteger);
+  const [basicSalary] = useQueryState("basicSalary", parseAsInteger);
+  const [totalContribution] = useQueryState(
+    "totalContribution",
+    parseAsInteger,
+  );
 
   const handlePageChange = async (newPage: number) => {
     await setPage(newPage);
@@ -156,15 +169,31 @@ const ContributorsTable = () => {
   };
 
   useEffect(() => {
-    // updateQuery("year", year);
-    // updateQuery("month", month);
-    // updateQuery("search", debouncedSearchValue ?? "");
+    updateQuery("search", debouncedSearchValue ?? undefined);
+    updateQuery("contributorId", debouncedContributorId ?? undefined);
+    updateQuery("gender", gender ?? undefined);
+    updateQuery("yearOfBirth", yearOfBirth?.toString() ?? undefined);
+    updateQuery("yearStarted", yearStarted?.toString() ?? undefined);
+    updateQuery("basicSalary", basicSalary?.toString() ?? undefined);
+    updateQuery(
+      "totalContribution",
+      totalContribution?.toString() ?? undefined,
+    );
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     setPage(1);
     updateQuery("role", "pensioner");
     updateQuery("page", 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [year, month, debouncedSearchValue]);
+  }, [
+    debouncedSearchValue,
+    debouncedContributorId,
+    gender,
+    yearOfBirth,
+    yearStarted,
+    basicSalary,
+    totalContribution,
+  ]);
   return (
     <>
       <TableWrapper
