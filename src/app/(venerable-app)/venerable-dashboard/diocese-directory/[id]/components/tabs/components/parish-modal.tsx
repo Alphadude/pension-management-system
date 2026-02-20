@@ -1,5 +1,6 @@
 import { Group, Modal, Tabs, Text } from "@mantine/core";
 import ContributorsTable from "./contributors-table";
+import PensionersTable from "./pensioners-table";
 
 interface Props {
   opened: boolean;
@@ -38,6 +39,9 @@ const ParishModal = ({ opened, close }: Props) => {
         </Group>
         <Tabs.Panel value="contributors" mt={20}>
           <ContributorsTable />
+        </Tabs.Panel>
+        <Tabs.Panel value="messages" mt={20}>
+          <PensionersTable />
         </Tabs.Panel>
       </Tabs>
     </Modal>

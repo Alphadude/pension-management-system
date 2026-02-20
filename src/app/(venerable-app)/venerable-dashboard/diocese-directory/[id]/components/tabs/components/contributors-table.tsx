@@ -15,7 +15,6 @@ import { getContributorTypeStyle } from "./extras";
 const contributorsTableHeadings = [
   "NAME",
   "USER ID",
-  "PARISH",
   "STATUS",
   "LAST CONTRIBUTION",
   "TOTAL CONTRIBUTIONS",
@@ -106,9 +105,6 @@ const ContributorsTable = () => {
       </Table.Td>
       <Table.Td className="text-sm font-normal text-[#1E1E1E]">
         {contributor.userId}
-      </Table.Td>
-      <Table.Td className="text-sm font-normal text-[#1E1E1E]">
-        {contributor.parish}
       </Table.Td>
       <Table.Td className="">
         <Box
