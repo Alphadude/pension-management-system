@@ -192,3 +192,36 @@ export const financeNavLinks = [
     icon: PackOutlineIcon,
   },
 ];
+
+export const accountantNavLinks = [
+  {
+    label: "Dashboard",
+    href: routes.accountantDashboard.root,
+    icon: LayoutDashboardIcon,
+  },
+  {
+    label: "Account Management",
+    href: routes.accountantDashboard.accountManagement,
+    icon: UsersIcon,
+  },
+  {
+    label: "Pension Management",
+    href: routes.accountantDashboard.pensionManagement,
+    icon: MonthlyContributionIcon,
+  },
+  {
+    label: "Monthly Contributions",
+    href: routes.accountantDashboard.monthlyContributions,
+    icon: UsersIcon,
+  },
+  {
+    label: "Settings",
+    href: routes.accountantDashboard.settings,
+    icon: SettingsIcon,
+  },
+  {
+    label: "Help & Support",
+    href: routes.accountantDashboard.support,
+    icon: PackOutlineIcon,
+  },
+];

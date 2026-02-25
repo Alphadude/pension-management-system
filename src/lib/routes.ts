@@ -60,4 +60,13 @@ export const routes = {
     settings: "/finance-dashboard/settings",
     support: "/finance-dashboard/support",
   },
+  accountantDashboard: {
+    root: "/accountant-dashboard",
+    accountManagement: "/accountant-dashboard/account-management",
+    pensionManagement: "/accountant-dashboard/pension-management",
+    vendorManagement: "/accountant-dashboard/vendor-management",
+    monthlyContributions: "/accountant-dashboard/monthly-contributions",
+    settings: "/accountant-dashboard/settings",
+    support: "/accountant-dashboard/support",
+  },
 };
