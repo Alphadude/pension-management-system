@@ -1,4 +1,4 @@
-import { DollarCircleIcon } from "@/components/icons/dollar-circle-icon";
+import { NairaCircleIcon } from "@/components/icons/naira-circle-icon";
 import { SimpleGrid, Stack } from "@mantine/core";
 import DiocesanAdministrationCard from "./components/diocesan-administration-card";
 import { OverviewMetricCard } from "./components/overview-metric-cards";
@@ -12,23 +12,23 @@ const Overview = () => {
       >
         <OverviewMetricCard
           label="Monthly Average"
-          value={`₦${208_333_333}`}
-          icon={<DollarCircleIcon className="size-[18px] md:size-[35px]" />}
+          value={`₦${(208333333).toLocaleString()}`}
+          icon={<NairaCircleIcon className="size-[18px] md:size-[35px]" />}
         />
         <OverviewMetricCard
           label="Quarterly Total"
-          value={`₦${208_333_333}`}
-          icon={<DollarCircleIcon className="size-[18px] md:size-[35px]" />}
+          value={`₦${(208333333).toLocaleString()}`}
+          icon={<NairaCircleIcon className="size-[18px] md:size-[35px]" />}
         />
         <OverviewMetricCard
           label="Yearly Total"
-          value={`₦${208_333_333}`}
-          icon={<DollarCircleIcon className="size-[18px] md:size-[35px]" />}
+          value={`₦${(208333333).toLocaleString()}`}
+          icon={<NairaCircleIcon className="size-[18px] md:size-[35px]" />}
         />
         <OverviewMetricCard
           label="Total Pensions"
-          value={`₦${208_333_333}`}
-          icon={<DollarCircleIcon className="size-[18px] md:size-[35px]" />}
+          value={`₦${(208333333).toLocaleString()}`}
+          icon={<NairaCircleIcon className="size-[18px] md:size-[35px]" />}
         />
       </SimpleGrid>
       <DiocesanAdministrationCard

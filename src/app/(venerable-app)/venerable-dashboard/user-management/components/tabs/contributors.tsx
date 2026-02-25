@@ -26,7 +26,6 @@ import UserProfileModal from "./components/user-profile-modal";
 const contributorsTableHeadings = [
   "NAME",
   "USER ID",
-  "PARISH",
   "STATUS",
   "LAST CONTRIBUTION",
   "DIOCESE",
@@ -65,9 +64,6 @@ const ContributorsDesktopTable = ({ data }: Props) => {
       </Table.Td>
       <Table.Td className="text-sm font-normal text-[#1E1E1E]">
         {contributor.id.slice(0, 4)}
-      </Table.Td>
-      <Table.Td className="text-sm font-normal text-[#1E1E1E]">
-        {contributor.parish}
       </Table.Td>
       <Table.Td className="">
         <Box

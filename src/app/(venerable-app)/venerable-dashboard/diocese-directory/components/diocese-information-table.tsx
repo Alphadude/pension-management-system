@@ -14,9 +14,50 @@ import {
 import { Eye, Search } from "lucide-react";
 import { dioceseInformationTableHeadings } from "./extras";
 
+const dummyDioceses = [
+  {
+    _id: "D-001",
+    name: "Diocese of Lagos",
+    parishCount: 45,
+    contributorCount: 12500,
+    totalPensioners: 850,
+    contactName: "Rev. Fr. Emmanuel",
+    contactEmail: "emmanuel@lagosdiocese.org",
+  },
+  {
+    _id: "D-002",
+    name: "Diocese of Abuja",
+    parishCount: 32,
+    contributorCount: 8400,
+    totalPensioners: 420,
+    contactName: "Rev. Fr. Peter",
+    contactEmail: "peter@abujadiocese.org",
+  },
+  {
+    _id: "D-003",
+    name: "Diocese of Port Harcourt",
+    parishCount: 28,
+    contributorCount: 6200,
+    totalPensioners: 310,
+    contactName: "Rev. Fr. Michael",
+    contactEmail: "michael@phdiocese.org",
+  },
+  {
+    _id: "D-004",
+    name: "Diocese of Enugu",
+    parishCount: 41,
+    contributorCount: 9800,
+    totalPensioners: 550,
+    contactName: "Rev. Fr. Joseph",
+    contactEmail: "joseph@enugudiocese.org",
+  },
+];
+
 const DioceseInformationTable = () => {
   const { data } = useGetAllDiocese();
-  const rows = data?.doc?.map((diocese) => (
+
+  const displayData = data?.doc?.length ? data.doc : dummyDioceses;
+  const rows = displayData?.map((diocese) => (
     <Table.Tr key={`diocese-table-row-${diocese._id}`}>
       <Table.Td className="text-sm !font-bold text-[#1E1E1E]">
         {diocese.name}
