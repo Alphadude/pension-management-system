@@ -197,12 +197,12 @@ const PensionersTable = () => {
   const { data: sessionData } = useSession();
 
   const { data, isLoading, updateQuery } = useGetAllUsers();
-  const [search, setSearch] = useQueryState("search");
+  const [search] = useQueryState("search");
   const [debouncedSearchValue] = useDebouncedValue(search?.trim(), 200);
 
   const [page, setPage] = useQueryState("page", parseAsInteger);
-  const [year, setYear] = useQueryState("year");
-  const [month, setMonth] = useQueryState("month");
+  const [_year, _setYear] = useQueryState("year");
+  const [_month, _setMonth] = useQueryState("month");
 
   const [contributorId] = useQueryState("contributorId");
   const [debouncedContributorId] = useDebouncedValue(

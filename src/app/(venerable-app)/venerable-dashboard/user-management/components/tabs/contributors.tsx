@@ -140,8 +140,8 @@ const ContributorsTable = () => {
   const [debouncedSearchValue] = useDebouncedValue(search?.trim(), 200);
 
   const [page, setPage] = useQueryState("page", parseAsInteger);
-  const [year, _setYear] = useQueryState("year");
-  const [month, _setMonth] = useQueryState("month");
+  const [_year, _setYear] = useQueryState("year");
+  const [_month, _setMonth] = useQueryState("month");
 
   const [contributorId] = useQueryState("contributorId");
   const [debouncedContributorId] = useDebouncedValue(

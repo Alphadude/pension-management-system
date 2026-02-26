@@ -158,6 +158,40 @@ const apis = {
         "/dashboard/venerable/get-overview",
       ),
   },
+
+  accounting: {
+    // Dashboard
+    getDashboardOverview: () =>
+      server.get<unknown>("/accounting/dashboard-overview"),
+
+    // Transactions
+    getTransactions: (query: string) =>
+      server.get<unknown>(`/accounting/transactions${query}`),
+    createTransaction: (data: unknown) =>
+      server.post<unknown>("/accounting/transactions", data),
+
+    // Ledger
+    getLedger: (accountId: string, query: string) =>
+      server.get<unknown>(`/accounting/ledger/${accountId}${query}`),
+
+    // Fixed Assets
+    getAssets: (query: string) =>
+      server.get<unknown>(`/accounting/assets${query}`),
+    createAsset: (data: unknown) =>
+      server.post<unknown>("/accounting/assets", data),
+    runDepreciation: () =>
+      server.post<unknown>("/accounting/assets/run-depreciation", {}),
+
+    // Reports
+    generateReport: (data: unknown) =>
+      server.post<unknown>("/accounting/reports/generate", data),
+
+    // Settings (Chart of Accounts)
+    getChartOfAccounts: () =>
+      server.get<unknown>("/accounting/chart-of-accounts"),
+    createAccount: (data: unknown) =>
+      server.post<unknown>("/accounting/chart-of-accounts", data),
+  },
 };
 
 export default apis;

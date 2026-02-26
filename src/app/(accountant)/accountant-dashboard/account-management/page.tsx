@@ -15,10 +15,37 @@ const AccountManagementPage = () => {
         </Box>
       </Stack>
 
-      {/* Placeholder for future Account Management Tables/Features */}
-      <Box className="flex h-64 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50">
+      <Box className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Box className="rounded-[16px] border border-[#F3F4F6] bg-white p-6 shadow-[0px_10px_20px_0px_rgba(206,206,206,0.15)]">
+          <Text className="text-sm font-medium text-[#6B7280]">
+            Total Cash Balance
+          </Text>
+          <Text className="mt-2 text-2xl font-bold text-[#111827]">₦0.00</Text>
+        </Box>
+        <Box className="rounded-[16px] border border-[#F3F4F6] bg-white p-6 shadow-[0px_10px_20px_0px_rgba(206,206,206,0.15)]">
+          <Text className="text-sm font-medium text-[#6B7280]">
+            Total Bank Balance
+          </Text>
+          <Text className="mt-2 text-2xl font-bold text-[#111827]">₦0.00</Text>
+        </Box>
+        <Box className="rounded-[16px] border border-[#F3F4F6] bg-white p-6 shadow-[0px_10px_20px_0px_rgba(206,206,206,0.15)]">
+          <Text className="text-sm font-medium text-[#6B7280]">
+            Total Income (YTD)
+          </Text>
+          <Text className="mt-2 text-2xl font-bold text-green-600">₦0.00</Text>
+        </Box>
+        <Box className="rounded-[16px] border border-[#F3F4F6] bg-white p-6 shadow-[0px_10px_20px_0px_rgba(206,206,206,0.15)]">
+          <Text className="text-sm font-medium text-[#6B7280]">
+            Total Expenses (YTD)
+          </Text>
+          <Text className="mt-2 text-2xl font-bold text-red-600">₦0.00</Text>
+        </Box>
+      </Box>
+
+      {/* Placeholder for Quick Actions or Recent Activity */}
+      <Box className="mt-6 flex h-64 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50">
         <Text className="text-gray-500">
-          Account Management Features Coming Soon
+          Accounting Overview Charts Coming Soon
         </Text>
       </Box>
     </Stack>

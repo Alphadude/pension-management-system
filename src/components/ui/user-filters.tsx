@@ -16,7 +16,7 @@ interface UserFiltersProps {
   showRoleFilter?: boolean;
 }
 
-const UserFilters = ({ children, showRoleFilter }: UserFiltersProps) => {
+const UserFilters = ({ children }: UserFiltersProps) => {
   const [opened, { toggle }] = useDisclosure(false);
 
   // nuqs states

@@ -202,7 +202,54 @@ export const accountantNavLinks = [
   {
     label: "Account Management",
     href: routes.accountantDashboard.accountManagement,
-    icon: UsersIcon,
+    icon: LayoutDashboardIcon,
+    subLinks: [
+      {
+        label: "Overview",
+        href: routes.accountantDashboard.accountManagement,
+        icon: LayoutDashboardIcon,
+      },
+      {
+        label: "Transactions",
+        href: `${routes.accountantDashboard.accountManagement}/transactions`,
+        icon: TransactionIcon,
+      },
+      {
+        label: "General Ledger",
+        href: `${routes.accountantDashboard.accountManagement}/ledger`,
+        icon: PackOutlineIcon,
+      },
+      {
+        label: "Cash Book",
+        href: `${routes.accountantDashboard.accountManagement}/cash-book`,
+        icon: MoneyIcon,
+      },
+      {
+        label: "Fixed Assets",
+        href: `${routes.accountantDashboard.accountManagement}/fixed-assets`,
+        icon: Analytics02Icon,
+      },
+      {
+        label: "Depreciation",
+        href: `${routes.accountantDashboard.accountManagement}/depreciation`,
+        icon: Analytics02Icon,
+      },
+      {
+        label: "Reports",
+        href: `${routes.accountantDashboard.accountManagement}/reports`,
+        icon: Analytics02Icon,
+      },
+      {
+        label: "Budget vs Actuals",
+        href: `${routes.accountantDashboard.accountManagement}/budgeting`,
+        icon: Analytics02Icon,
+      },
+      {
+        label: "Configurations",
+        href: `${routes.accountantDashboard.accountManagement}/settings`,
+        icon: SettingsIcon,
+      },
+    ],
   },
   {
     label: "Pension Management",

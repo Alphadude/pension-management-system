@@ -29,7 +29,7 @@ const supportSchema = object({
 const SupportPageClient = () => {
   const mounted = useMounted();
 
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { close }] = useDisclosure(false);
 
   const form = useForm({
     initialValues,

@@ -23,10 +23,6 @@ const DioceseManagementClient = () => {
     ? tabParam
     : DioceseUserManagementStatusTabConfig?.[0]?.value;
 
-  const active = DioceseUserManagementStatusTabConfig.find(
-    (item) => item.value === activeTab,
-  )?.label;
-
   const handleTabChange = (e: string | null) => {
     if (!e) return;
     const params = new URLSearchParams(searchParams);

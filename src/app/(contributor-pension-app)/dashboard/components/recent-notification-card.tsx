@@ -8,9 +8,7 @@ import { useSession } from "next-auth/react";
 
 const RecentNotificationCard = () => {
   const { data: sessionUser } = useSession();
-  const { data, isLoading } = useGetUserNotifications(
-    sessionUser?.user._id ?? "",
-  );
+  const { data } = useGetUserNotifications(sessionUser?.user._id ?? "");
   const notifications = data?.doc?.slice(0, 3) ?? [];
   return (
     <Box className="shadow-[rgba(0, 0, 0, 0.05)] mb-10 w-full rounded-[12px] bg-[#ffff]">

@@ -132,19 +132,18 @@ const ContributorsTable = () => {
 
   const { data, isLoading, updateQuery } = useGetAllUsers();
 
-  const [search, setSearch] = useQueryState("search");
+  const [search] = useQueryState("search");
   const [debouncedSearchValue] = useDebouncedValue(search?.trim(), 200);
 
   const [page, setPage] = useQueryState("page", parseAsInteger);
   const [year, _setYear] = useQueryState("year");
   const [month, _setMonth] = useQueryState("month");
-  const [gender, setGender] = useQueryState("gender");
-  const [yearOfBirth, setYearOfBirth] = useQueryState("yearOfBirth");
-  const [yearStarted, setYearStarted] = useQueryState("yearStarted");
-  const [basicSalary, setBasicSalary] = useQueryState("basicSalary");
-  const [totalContribution, setTotalContribution] =
-    useQueryState("totalContribution");
-  const [contributorId, setContributorId] = useQueryState("contributorId");
+  const [gender] = useQueryState("gender");
+  const [yearOfBirth] = useQueryState("yearOfBirth");
+  const [yearStarted] = useQueryState("yearStarted");
+  const [basicSalary] = useQueryState("basicSalary");
+  const [totalContribution] = useQueryState("totalContribution");
+  const [contributorId] = useQueryState("contributorId");
 
   const handlePageChange = async (newPage: number) => {
     await setPage(newPage);

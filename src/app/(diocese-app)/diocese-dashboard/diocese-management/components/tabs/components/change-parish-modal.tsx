@@ -56,7 +56,7 @@ const ChangeParishModal = ({ opened, onClose, contributorId }: Props) => {
   }, [sessionData?.user?.diocese]);
 
   const handleSubmit = (values: UpdateParishFormValues) => {
-    console.log(values);
+    console.warn(values);
   };
 
   return (

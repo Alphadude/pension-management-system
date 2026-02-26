@@ -14,7 +14,6 @@ export default function GenerateReportModal() {
   const [format, setFormat] = useState("PDF");
 
   function handleGenerateClick() {
-    const payload = { reportType, startDate, endDate, format };
     setTimeout(() => setOpen(false), 600);
   }
 
