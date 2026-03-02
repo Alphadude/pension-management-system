@@ -1,3 +1,4 @@
+"use client";
 import { Box, Grid, Group, Progress, Stack, Text } from "@mantine/core";
 import {
   Building,

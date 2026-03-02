@@ -3,7 +3,7 @@ import { ExportIcon } from "@/components/icons/export-icon";
 import { useGetAllUsers } from "@/hooks/query/use-user";
 import { type SessionUser } from "@/types/common";
 import { Box, Button, Group, Stack, Text } from "@mantine/core";
-import { PlusIcon } from "lucide-react";
+import { Plus as PlusIcon } from "lucide-react";
 import Papa from "papaparse";
 import { useState } from "react";
 import SystemUsersTable from "./system-users-table";

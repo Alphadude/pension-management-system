@@ -47,6 +47,24 @@ export const authConfig = {
         password: {},
       },
       authorize: async (credentials) => {
+        // Mock login for testing accountant flow
+        if (
+          credentials?.email === "accountant@mock.com" &&
+          credentials?.password === "password"
+        ) {
+          return {
+            user: {
+              email: "accountant@mock.com",
+              role: "accountant",
+              firstName: "Mock",
+              lastName: "Accountant",
+              dob: "1980-01-01T00:00:00.000Z",
+            },
+            accessToken: "mock-token",
+            refreshToken: "mock-refresh-token",
+          };
+        }
+
         const apiUrl = `${env.NEXT_PUBLIC_API_URL}/users/login`;
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return (

@@ -4,7 +4,7 @@ import { BigFileIcon } from "@/components/icons/big-file-icon";
 import { handleDropzoneReject } from "@/lib/utils";
 import { Box, Button, Card, Group, Modal, Stack, Text } from "@mantine/core";
 import { Dropzone } from "@mantine/dropzone";
-import { Eye, UploadIcon } from "lucide-react";
+import { Eye, Upload as UploadIcon } from "lucide-react";
 
 interface VendorModalProps {
   opened: boolean;

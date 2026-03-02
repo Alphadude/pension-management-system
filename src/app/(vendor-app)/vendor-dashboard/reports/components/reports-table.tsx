@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { ReportsResponse } from "@/types/common";
 import { Box, Button, Table } from "@mantine/core";
 import { format } from "date-fns";
-import { DownloadIcon } from "lucide-react";
+import { Download as DownloadIcon } from "lucide-react";
 import { reportsTableHeadings } from "../../transaction-history/components/extras";
 import { formatReportString } from "./reports-page-client";
 

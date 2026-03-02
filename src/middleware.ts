@@ -18,6 +18,7 @@ export default auth((req) => {
     finance: ["/finance-dashboard"],
     diocese: ["/diocese-dashboard"],
     pensioner: ["/dashboard"],
+    accountant: ["/accountant-dashboard"],
   };
 
   // Define each role’s default redirect (where they should go)
@@ -29,6 +30,7 @@ export default auth((req) => {
     finance: routes.financeDashboard.root,
     diocese: routes.dioceseDashboard.root,
     pensioner: routes.dashboard.dashboard,
+    accountant: routes.accountantDashboard.root,
   };
 
   // If the user is authenticated and trying to access an auth page, redirect them
@@ -61,14 +63,5 @@ export default auth((req) => {
 
 // Matcher configuration
 export const config = {
-  matcher: [
-    "/auth/:path*",
-    "/vendor-dashboard/:path*",
-    "/dashboard/:path*",
-    "/parish-dashboard/:path*",
-    "/venerable-dashboard/:path*",
-    "/finance-dashboard/:path*",
-    "/diocese-dashboard/:path*",
-    "/pensioner-dashboard/:path*",
-  ],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

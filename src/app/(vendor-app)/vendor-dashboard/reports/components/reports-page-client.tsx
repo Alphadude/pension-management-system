@@ -24,7 +24,7 @@ import {
 import { YearPickerInput } from "@mantine/dates";
 import { useDisclosure, useMounted } from "@mantine/hooks";
 import { format } from "date-fns";
-import { FilterIcon } from "lucide-react";
+import { Filter as FilterIcon } from "lucide-react";
 import type { Session } from "next-auth";
 import { parseAsInteger, useQueryState } from "nuqs";
 import { useEffect } from "react";

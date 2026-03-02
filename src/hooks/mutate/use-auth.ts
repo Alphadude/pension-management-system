@@ -13,9 +13,11 @@ import type {
   OtpVerificationResponse,
   ResetPasswordFormValues,
   ResetPasswordResponse,
+  SessionUser,
   signupResponse,
   UpdatePasswordFormValues,
   UpdatePasswordResponse,
+  UserRole,
   vendorSignupFormValues,
   VerifyOtpFormValues,
 } from "@/types/common";
@@ -37,13 +39,69 @@ export const useAuth = (searchParams?: URLSearchParams) => {
 
   const loginMutation = useMutation({
     mutationFn: async (values: LoginFormValues) => {
+      if (
+        values.email === "accountant@mock.com" &&
+        values.password === "password"
+      ) {
+        return {
+          status: "success",
+          user: {
+            _id: "mock-id",
+            id: "mock-id",
+            firstName: "Mock",
+            lastName: "Accountant",
+            email: "accountant@mock.com",
+            role: "accountant" as UserRole,
+            active: true,
+            status: "active",
+            parish: "Mock Parish",
+            diocese: "Mock Diocese",
+            gender: "Mock Gender",
+            dob: "1980-01-01",
+            contactPerson: "Mock Contact",
+            businessAddress: "Mock Address",
+            password: "mock-password",
+            phoneNumber: "0000000000",
+            pensionBalance: 0,
+            contributionBalance: 0,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            __v: 0,
+            isPensioner: false,
+          } as SessionUser,
+          accessToken: "mock-token",
+          refreshToken: "mock-refresh-token",
+        } as LoginResponseValue;
+      }
       const apiUrl = `${env.NEXT_PUBLIC_API_URL}/users/login`;
       const res = await axios.post(apiUrl, values);
       return res.data as LoginResponseValue;
     },
     onSuccess: async (data, variables) => {
+      const getRoleRedirect = (role: string | undefined): string => {
+        switch (role) {
+          case "accountant":
+            return routes.accountantDashboard.root;
+          case "vendor":
+            return routes.vendorDashboard.root;
+          case "parish":
+            return routes.parishDashboard.root;
+          case "venerable":
+            return routes.venerableDashboard.root;
+          case "finance":
+            return routes.financeDashboard.root;
+          case "diocese":
+            return routes.dioceseDashboard.root;
+          case "contributor":
+          case "pensioner":
+            return routes.dashboard.dashboard;
+          default:
+            return routes.dashboard.dashboard;
+        }
+      };
+
       const callbackUrl =
-        searchParams?.get("callbackUrl") ?? routes.vendorDashboard.root;
+        searchParams?.get("callbackUrl") ?? getRoleRedirect(data?.user?.role);
       if (data?.status === "2fa_required") {
         const params = new URLSearchParams({
           email: variables.email,
