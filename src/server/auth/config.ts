@@ -1,8 +1,7 @@
 import { env } from "@/env";
 import { routes } from "@/lib/routes";
 import { hasExceededSixty } from "@/lib/utils";
-import type { SessionUser } from "@/types/common";
-import axios from "axios";
+import type { LoginResponseValue, SessionUser, UserRole } from "@/types/common";
 import {
   CredentialsSignin,
   type DefaultSession,
@@ -54,37 +53,63 @@ export const authConfig = {
         ) {
           return {
             user: {
-              email: "accountant@mock.com",
-              role: "accountant",
+              _id: "mock-id",
+              id: "mock-id",
               firstName: "Mock",
               lastName: "Accountant",
+              email: "accountant@mock.com",
+              role: "accountant" as UserRole,
+              active: true,
+              status: "active",
+              parish: "Mock Parish",
+              diocese: "Mock Diocese",
+              gender: "Mock Gender",
               dob: "1980-01-01T00:00:00.000Z",
-            },
+              contactPerson: "Mock Contact",
+              businessAddress: "Mock Address",
+              password: "password",
+              phoneNumber: "0000000000",
+              pensionBalance: 0,
+              contributionBalance: 0,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+              __v: 0,
+              isPensioner: false,
+            } as SessionUser,
             accessToken: "mock-token",
             refreshToken: "mock-refresh-token",
           };
         }
 
         const apiUrl = `${env.NEXT_PUBLIC_API_URL}/users/login`;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return (
-          axios
-            .post(apiUrl, {
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
               email: credentials?.email,
               password: credentials?.password,
-            })
-            .then((response) => {
-              // ("response", response.data);
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-              return response.data;
-            })
-            .catch((error) => {
-              const e = new LoginError();
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-              e.code = error?.response?.data?.message;
-              throw e;
-            }) ?? null
-        );
+            }),
+          });
+
+          if (!response.ok) {
+            const errorData = (await response.json()) as { message?: string };
+            const e = new LoginError();
+            e.code = errorData?.message ?? "Invalid email or password";
+            throw e;
+          }
+
+          return (await response.json()) as LoginResponseValue;
+        } catch (error) {
+          if (error instanceof LoginError) throw error;
+
+          const e = new LoginError();
+          e.code = "Network error or server unavailable";
+          throw e;
+        }
       },
     }),
     /**
