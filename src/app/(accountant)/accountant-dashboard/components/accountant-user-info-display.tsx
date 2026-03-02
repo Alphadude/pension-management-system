@@ -9,11 +9,11 @@ const AccountantUserInfoDisplay = () => {
         src={sessionData?.user?.profilePhoto?.url}
         color="initials"
         radius="xl"
-        name={`${sessionData?.user.firstName ?? ""} ${sessionData?.user.lastName ?? ""}`}
+        name={`${sessionData?.user?.firstName ?? ""} ${sessionData?.user?.lastName ?? ""}`}
         key={sessionData?.user?.profilePhoto?.url ?? "no-avatar"}
       />
       <Text className="text-sm font-medium text-[#374151]">
-        {`${sessionData?.user.firstName ?? ""} ${sessionData?.user.lastName ?? ""}`}
+        {`${sessionData?.user?.firstName ?? ""} ${sessionData?.user?.lastName ?? ""}`}
       </Text>
     </Group>
   );

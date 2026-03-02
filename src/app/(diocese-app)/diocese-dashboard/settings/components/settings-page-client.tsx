@@ -9,7 +9,7 @@ import {
   TextInput,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { PlusIcon } from "lucide-react";
+import { Plus as PlusIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AddKYCRequirementsModal from "./add-kyc-requirements-modal";
 import AddParishModal from "./add-parish-modal";

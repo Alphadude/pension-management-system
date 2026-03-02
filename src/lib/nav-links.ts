@@ -7,7 +7,10 @@ import { Payment02Icon } from "@/components/icons/payment-02-icon";
 import { ProfileThinIcon } from "@/components/icons/profile-thin-icon";
 import { TransactionIcon } from "@/components/icons/transaction-icon";
 import { UsersIcon } from "@/components/icons/users-icon";
-import { LayoutDashboardIcon, SettingsIcon } from "lucide-react";
+import {
+  LayoutDashboard as LayoutDashboardIcon,
+  Settings as SettingsIcon,
+} from "lucide-react";
 import { routes } from "./routes";
 
 export const dashboardNavLinks = [

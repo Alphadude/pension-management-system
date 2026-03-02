@@ -5,7 +5,7 @@ import { PaginationCard } from "@/components/ui/pagination";
 import { cn } from "@/lib/utils";
 import { Box, Button, Select, Stack, Tabs, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ChevronRight, FilterIcon } from "lucide-react";
+import { ChevronRight, Filter as FilterIcon } from "lucide-react";
 import Link from "next/link";
 import { parseAsInteger, useQueryState } from "nuqs";
 import { useEffect } from "react";

@@ -9,7 +9,7 @@ import { handleDropzoneReject } from "@/lib/utils";
 import { Box, Button, Group, Modal, Stack, Text } from "@mantine/core";
 import { Dropzone } from "@mantine/dropzone";
 import { useDisclosure } from "@mantine/hooks";
-import { UploadIcon } from "lucide-react";
+import { Upload as UploadIcon } from "lucide-react";
 import Papa from "papaparse";
 import { useState } from "react";
 

@@ -7,7 +7,7 @@ import SkeletonWrapper from "@/components/ui/skeleton-wrapper";
 import { useGetParishDashboardOverview } from "@/hooks/query/use-parish";
 import { routes } from "@/lib/routes";
 import { Box, Button, Group, SimpleGrid, Stack, Text } from "@mantine/core";
-import { PlusIcon } from "lucide-react";
+import { Plus as PlusIcon } from "lucide-react";
 import type { Session } from "next-auth";
 import { useSession } from "next-auth/react";
 import numeral from "numeral";

@@ -8,7 +8,7 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
-import { DownloadIcon, SearchIcon } from "lucide-react";
+import { Download as DownloadIcon, Search as SearchIcon } from "lucide-react";
 import React from "react";
 
 interface ParishSubmissionDetailsProps {

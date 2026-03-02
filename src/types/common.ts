@@ -114,7 +114,8 @@ export type UserRole =
   | "parish"
   | "vendor"
   | "contributor"
-  | "pensioner";
+  | "pensioner"
+  | "accountant";
 
 export interface LoginFormValues {
   email: string;
